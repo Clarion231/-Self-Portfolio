@@ -12,18 +12,6 @@ It’s great for beginners learning how to work with forms, DOM manipulation, an
 
 ---
 
-## 🌐 Live Demo
-👉 [View on GitHub Pages](https://Clarion231.github.io/student-grade-calculator/)  
-
-
----
-
-## 📸 Screenshot
-![App Screenshot](screenshot.png)  
-
-
----
-
 ## ⚡ Features
 - Input marks for 5 subjects (0–100).  
 - Instant calculation of **Total Marks** and **Average**.  
