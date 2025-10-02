@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Clarion</title>
+  <meta name="description" content="Contact page for Clarion's portfolio" />
+
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa6b2;--accent:#06b6d4;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #071021 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;justify-content:center;padding:32px;
+    }
+
+    .container{
+      width:100%;max-width:920px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.7);backdrop-filter:blur(6px);
+      display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start
+    }
+
+    header h1{margin:0;font-size:28px}
+    header p{color:var(--muted);margin-top:8px}
+
+    .info{
+      padding:18px;border-radius:10px;background:linear-gradient(180deg,var(--glass),transparent);
+      border:1px solid rgba(255,255,255,0.03)
+    }
+
+    .contact-card{display:flex;flex-direction:column;gap:12px}
+    .contact-row{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:14px;text-decoration:none}
+
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:var(--muted)}
+    input[type="text"],input[type="email"],textarea,select{
+      width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px;resize:vertical
+    }
+    textarea{min-height:140px}
+
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+    .actions{display:flex;gap:12px;align-items:center}
+    button{
+      cursor:pointer;border:0;padding:10px 14px;border-radius:10px;font-weight:600;
+      background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042027
+    }
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    footer{font-size:13px;color:var(--muted);margin-top:12px}
+
+    @media (max-width:920px){.container{grid-template-columns:1fr;padding:20px}.contact-row{flex-wrap:wrap}.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <section>
+      <header>
+        <h1>Contact Me</h1>
+        <p>Want to work together or say hi? Fill the form or use the quick contact options below.</p>
+      </header>
+
+      <div class="info" aria-hidden="false">
+        <div class="contact-card">
+          <div class="contact-row">
+            <a href="mailto:hello@your-email.com" class="chip">📧 Email: hello@your-email.com</a>
+            <a href="tel:+1234567890" class="chip">📞 Call: +123 456 7890</a>
+            <div class="chip">📍 Location: Germany</div>
+          </div>
+
+          <p style="color:var(--muted);margin-top:8px;line-height:1.45">You can reach me directly via email or phone. Prefer face-to-face? Let's connect — I’m usually based in Germany, but available online as well.</p>
+        </div>
+
+        <footer>
+          <strong>Hint:</strong> Replace the sample email (<code>hello@your-email.com</code>) and phone (<code>+1234567890</code>) with your real details.
+        </footer>
+      </div>
+    </section>
+
+    <aside>
+      <!-- FORM: by default this uses a simple form handler placeholder. -->
+      <form id="contactForm" method="POST" action="" novalidate>
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+        <div class="row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Project, question, etc." />
+          </div>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me a bit about what you need..." required></textarea>
+
+        <div class="actions">
+          <button id="sendBtn" type="submit">Send message</button>
+          <button id="clearBtn" type="button" class="secondary">Clear</button>
+        </div>
+
+        <div id="status" aria-live="polite" style="color:var(--muted);margin-top:8px;font-size:14px"></div>
+
+        <footer style="margin-top:8px;color:var(--muted);font-size:13px">If your browser opens an email client after submitting, fill and send that email to complete submission.</footer>
+      </form>
+
+      <script>
+        (function (){
+          const form = document.getElementById('contactForm');
+          const status = document.getElementById('status');
+          const clearBtn = document.getElementById('clearBtn');
+          const sendBtn = document.getElementById('sendBtn');
+
+          clearBtn.addEventListener('click', ()=>{
+            form.reset();status.textContent='Form cleared.'
+          });
+
+          form.addEventListener('submit', async (e)=>{
+            e.preventDefault();
+            status.textContent='Sending...';
+            sendBtn.disabled = true;
+
+            const formAction = form.getAttribute('action').trim();
+            const data = {
+              name: form.name.value.trim(),
+              email: form.email.value.trim(),
+              subject: form.subject.value.trim(),
+              message: form.message.value.trim()
+            };
+
+            if(!data.name || !data.email || !data.message){
+              status.textContent = 'Please fill name, email and message.';
+              sendBtn.disabled = false;return;
+            }
+
+            if(formAction){
+              try{
+                const res = await fetch(formAction, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+                if(res.ok){status.textContent='Message sent — thank you!';form.reset();}
+                else{status.textContent='Submission failed. Please try again or use the email address shown.'}
+              }catch(err){console.error(err);status.textContent='Submission error — check console for details.'}
+              sendBtn.disabled = false;return;
+            }
+
+            try{
+              const to = 'hello@your-email.com'; // <-- replace with your email
+              const subject = encodeURIComponent((data.subject || 'Contact from portfolio') + ' — ' + data.name);
+              const body = encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message);
+
+              const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+              window.location.href = mailto;
+              status.textContent = 'Mail client opened — complete the email to send.';
+            }catch(ex){status.textContent='Could not open mail client. Please copy the email address and send your message manually.'}
+
+            sendBtn.disabled = false;
+          });
+        })();
+      </script>
+    </aside>
+  </main>
+</body>
+</html>
