@@ -4,21 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clarion's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to right, #f9fafc, #eef2f7);
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .link-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .link-buttons a {
+      display: block;
+      background: #3498db;
+      color: white;
+      padding: 1.2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .link-buttons a:hover {
+      background: #2980b9;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      margin-top: 3rem;
+      background: #2c3e50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Clarion's Portfolio</h1>
-  <p>Click below to access my projects, CV, and personal pages</p>
+  <header>
+    <h1>Clarion Kimuron Kipchumba</h1>
+    <p>Welcome to my personal portfolio — explore my projects, CV, and more.</p>
+  </header>
 
-  <div class="link-buttons">
-    <a href="about.html">📄 About Me</a>
-    <a href="contact.html">📧 Contact Me</a>
-    <a href="CV.pdf" target="_blank">📄 View CV (PDF)</a>
-    <a href="student-grade-calculator.html">🧮 Student Grade Calculator</a>
-  </div>
+  <main>
+    <h2>Quick Access</h2>
+    <p>Choose what you’d like to explore:</p>
+
+    <div class="link-buttons">
+      <a href="about.html">📄 About Me</a>
+      <a href="contact.html">📧 Contact Me</a>
+      <a href="CV.pdf" target="_blank">📑 View My CV (PDF)</a>
+      <a href="student-grade-calculator.html">🧮 Student Grade Calculator</a>
+    </div>
+  </main>
 
   <footer>
     &copy; 2025 Clarion Kimuron Kipchumba | My Portfolio
   </footer>
 </body>
 </html>
+
