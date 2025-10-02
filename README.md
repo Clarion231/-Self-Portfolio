@@ -20,7 +20,4 @@ It’s great for beginners learning how to work with forms, DOM manipulation, an
 
 ---
 
-## 🛠️ How to Use
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Clarion231/student-grade-calculator.git
+
