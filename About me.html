@@ -1,1 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Clarion</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#6ee7b7}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{background:linear-gradient(180deg,#071029 0%, #081224 60%);color:#e6eef6;display:flex;align-items:center;justify-content:center;padding:32px}
+    .container{max-width:900px;width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:#0b1a2a;border:2px solid rgba(255,255,255,0.04);font-weight:700;font-size:28px;color:var(--accent)}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    section{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
+    section h2{margin:0 0 8px;font-size:16px}
+    ul{margin:0;padding-left:18px;color:var(--muted)}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:13px}
+    footer{margin-top:18px;display:flex;gap:10px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14px}
+    .btn.primary{border-color:transparent;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042022}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="avatar">CK</div>
+      <div>
+        <h1>Clarion Kimuron Kipchumba</h1>
+        <p class="lead">Student · Aspiring Computer Scientist · Footballer</p>
+        <div class="badges">
+          <span class="badge">Age: 23</span>
+          <span class="badge">Location: Germany</span>
+          <span class="badge">Plays: eFootball (mobile)</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section id="intro">
+        <h2>Introduction</h2>
+        <p style="color:var(--muted);margin:0;line-height:1.5">
+          Hi — I'm Clarion. I'm studying Computer Science and currently exploring programming, project management, and creative problem solving. I enjoy blending technical learning with teamwork and real-world projects.
+        </p>
+      </section>
+
+      <section id="interests">
+        <h2>Personal Interests</h2>
+        <ul>
+          <li>Playing football (and keeping fit)</li>
+          <li>Mobile gaming — eFootball</li>
+          <li>Learning web development and Jupyter Notebooks</li>
+          <li>Project management & teamwork techniques</li>
+        </ul>
+      </section>
+
+      <section id="goals">
+        <h2>Goals & Objectives</h2>
+        <ul>
+          <li>Short-term: Build a portfolio with small web projects and Jupyter notebooks to demonstrate learning.
+          </li>
+          <li>Mid-term: Complete a BSc in Computer Science and contribute to open-source projects.</li>
+          <li>Long-term: Work on scalable software systems and mentor other students entering CS.</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact & Next Steps</h2>
+        <p style="color:var(--muted);margin:0 0 8px">Want this file on GitHub Pages or converted into a multi-page portfolio? I can scaffold that next.</p>
+        <div style="display:flex;gap:8px">
+          <a class="btn" href="#">Download HTML</a>
+          <a class="btn primary" href="#">Deploy to GitHub Pages</a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <small style="color:var(--muted)">Generated: A simple, responsive single-file About page you can commit to a GitHub repo as <code>about_me.html</code>.</small>
+    </footer>
+  </main>
+</body>
+</html>
 
