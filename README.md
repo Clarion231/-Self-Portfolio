@@ -13,14 +13,14 @@ It’s great for beginners learning how to work with forms, DOM manipulation, an
 ---
 
 ## 🌐 Live Demo
-👉 [View on GitHub Pages](https://your-username.github.io/student-grade-calculator/)  
-*(Replace `your-username` with your actual GitHub username once you publish)*
+👉 [View on GitHub Pages](https://Clarion231.github.io/student-grade-calculator/)  
+
 
 ---
 
 ## 📸 Screenshot
 ![App Screenshot](screenshot.png)  
-*(Optional – take a screenshot of your app and add it here)*
+
 
 ---
 
